@@ -1,0 +1,86 @@
+{
+	"name" : "basic",
+	"description" : "A configurable image slideshow",
+	"version" : "0",
+	"start" : "../../main.html",
+	"data" : null,
+	"configuration" : {
+		"type" : "object",
+		"properties" : {
+			"wombat_component" : {
+				"enum" : ["basic"],
+				"default" : "basic"
+			},
+			"stimuli" : {
+				"type" : "array",
+				"items" : {
+					"type" : "object",
+					"properties" : {
+						
+						"name" : {
+							"type" : "string",
+							"required" : "true"
+						},
+						"path" : {
+							"type" : "string",
+							"required" : "true"
+						},
+						"duration" : {
+							"type" : "number"
+						},
+						"text" : {
+							"type" : "string"
+						},
+						"button" : {
+							"type" : "string"
+							
+						} 
+					}
+				}
+			},
+			"repeats" : {
+				"type" : "number",
+				"default" : 1
+			},
+			"duration" : {
+				"type" : "number",
+				"default" : 5000
+			},
+			"randomise" : {
+				"type" : "boolean",
+				"default" : false
+			}
+		}
+	},
+
+	"default_configuration" : {
+		"stimuli" : [
+	        {
+	            "name" : "wombat1",
+	            "path" : "https://manatee-resources.s3.amazonaws.com/wombat-default-stimuli/wombat1.jpg",        
+	        	"duration" : 2000,
+	        	"text" : "Test Text 1",
+	        	"textStyle" : {"color" : "red"},
+	        	"button" : "button test 1"
+	        },
+	        {
+	            "name" : "wombat2",
+	            "path" : "https://manatee-resources.s3.amazonaws.com/wombat-default-stimuli/wombat2.jpg",
+	            "duration" : 2000,
+	            "text" : "Test Text 2",
+	            "textStyle" : {"color" : "black"},
+	        	"button" : "button test 2"
+	        },
+	        {
+	            "name" : "wombat3",
+	            "path" : "https://manatee-resources.s3.amazonaws.com/wombat-default-stimuli/wombat3.jpg",
+	            "duration" : 2000,
+	            "text" : "Test Text 3",
+	        	"button" : "button test 3"
+	        }
+    	],
+	"repeats" : 1,
+	"duration" : 2000,
+	"randomise" : false
+	}
+}
